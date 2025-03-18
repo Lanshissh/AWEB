@@ -11,7 +11,11 @@ const multer = require("multer");
 //Create an instance of express app
 var app=Express();
 //Make use of the CORS module
-app.use(cors());
+app.use(cors({
+    origin: 'https://disiplinamuna.netlify.app',
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+    exposedHeaders: ['Content-Disposition'],
+  }));
 app.use(Express.json());
 
 //Indicate the connection string from mongodb
