@@ -13,7 +13,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  title = 'donationapp';
   //set the link of the based route
   readonly APIUrl="https://aweb-p9q6.onrender.com/api/donate/GetDonations";
   
