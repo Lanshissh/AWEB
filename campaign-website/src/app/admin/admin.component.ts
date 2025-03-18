@@ -6,7 +6,8 @@ import {HttpClient} from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-admin',
+  standalone: true,
   imports: [CommonModule, MatTableModule, MatIconModule, MatButtonModule],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
@@ -44,20 +45,6 @@ export class AdminComponent {
       }
   ngOnInit(){
     this.fetchDonations();
-  }
-
-  addBook(){
-    var newBook=(<HTMLInputElement>document.getElementById("newBook")).value;
-    var newDesc=(<HTMLInputElement>document.getElementById("newDesc")).value;
-    var newPrice=(<HTMLInputElement>document.getElementById("newPrice")).value;
-    var formData=new FormData();
-    formData.append("title", newBook);
-    formData.append("description", newDesc);
-    formData.append("price", newPrice.toString());
-    this.http.post(this.APIUrl+'AddBook', formData).subscribe(data=>{
-      alert(data);
-      this.fetchDonations()
-    })
   }
   
   deleteBook(id:any){
