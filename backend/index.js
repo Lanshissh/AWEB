@@ -26,12 +26,28 @@ var DATABASENAME = "disiplina_db";
 var database;
 
 //create a listener
-app.listen(5038, ()=>{
-    Mongoclient.connect(CONNECTION_STRING,(error,client)=>{
-        database=client.db(DATABASENAME);
-        console.log(`Yay! Now connected to Cluster`);
-    })
-})
+// app.listen(5038, ()=>{
+//     Mongoclient.connect(CONNECTION_STRING,(error,client)=>{
+//         database=client.db(DATABASENAME);
+//         console.log(`Yay! Now connected to Cluster`);
+//     })
+// })
+
+const PORT = process.env.PORT || 5038;
+
+Mongoclient.connect(CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true }, (error, client) => {
+    if (error) {
+        console.error('Failed to connect to MongoDB:', error);
+        process.exit(1);
+    }
+
+    database = client.db(DATABASENAME);
+    console.log('Yay! Now connected to cluster');
+
+    app.listen(PORT || 5038, () => {
+        console.log(`Listening on Port ${PORT}`);
+    });
+});
 
 
 //ROUTES TO ALL ACTIONS
