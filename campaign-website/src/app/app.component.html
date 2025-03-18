@@ -1,0 +1,30 @@
+<mat-toolbar [ngClass]="{'scrolled': isScrolled}" class="navbar">
+  <div class="navbar-content">
+    <div class="navbar-brand">
+      <img src="assets/img/logo.png" alt="Disiplina Muna" />
+      <span class="navbar-title">Disiplina Muna</span>
+    </div>
+    <nav class="nav-links">
+      <a mat-button routerLink="/" routerLinkActive="">Home</a>
+      <a mat-button routerLink="/about" routerLinkActive="active">About</a>
+      <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a mat-button routerLink="/blog" routerLinkActive="active">Blog</a>
+    </nav>
+    <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="menu-overlay" *ngIf="isMenuOpen" (click)="toggleMenu()">
+  <div class="menu-content">
+    <a mat-button routerLink="/" routerLinkActive="active" (click)="toggleMenu()">Home</a>
+    <a mat-button routerLink="/about" routerLinkActive="active" (click)="toggleMenu()">About</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active" (click)="toggleMenu()">Contact</a>
+    <a mat-button routerLink="/blog" routerLinkActive="active" (click)="toggleMenu()">Blog</a>
+  </div>
+</div>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

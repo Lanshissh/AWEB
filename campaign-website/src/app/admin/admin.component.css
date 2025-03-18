@@ -1,0 +1,42 @@
+.admin-dashboard {
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .mat-column-actions {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .status-pending {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .status-accepted {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .status-cancelled {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }

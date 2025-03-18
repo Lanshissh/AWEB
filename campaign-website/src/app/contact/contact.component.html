@@ -1,0 +1,68 @@
+<div class="contact-container">
+  <div class="contact-hero">
+    <div class="contact-content">
+      <h1>Support Us</h1>
+      <p>We'd love to hear from you! Reach out to us for any inquiries, feedback, or to make a donation.</p>
+    </div>
+  </div>
+
+  <div class="contact-form-section">
+    <h2>Make a Donation</h2>
+    <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" name="name" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" name="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Donation Amount</mat-label>
+        <input matInput type="number" formControlName="amount" name="amount" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" name="message"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Donate Now</button>
+    </form>
+    <p>{{success}}</p>
+  </div>
+
+  <div class="contact-info-section">
+    <h2>Our Office</h2>
+    <div class="contact-info-cards">
+      <mat-card class="contact-info-card">
+        <mat-card-header>
+          <mat-card-title>Address</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>City Hall, San Fernando, Pampanga</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="contact-info-card">
+        <mat-card-header>
+          <mat-card-title>Email</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>info&#64;disiplinamuna.com</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="contact-info-card">
+        <mat-card-header>
+          <mat-card-title>Phone</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>+63 961 330 5280</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
