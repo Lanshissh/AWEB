@@ -48,7 +48,7 @@ export class ContactComponent {
     if (this.formData.valid){
       this.submitted = true;
       
-      this.http.post('http://localhost:5038/api/donate/AddDonation', this.formData.value).subscribe({
+      this.http.post('https://aweb-p9q6.onrender.com/api/donate/AddDonation', this.formData.value).subscribe({
       // this.http.post('https://bangketa-eskwela-backend.onrender.com/admin/contact', this.formData.value).subscribe({
         next: (response) => {
           console.log('Success:', response);
