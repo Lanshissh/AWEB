@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
   title = 'donationapp';
   //set the link of the based route
   readonly APIUrl="https://aweb-p9q6.onrender.com/api/donate/GetDonations";
@@ -32,6 +32,7 @@ export class AdminComponent implements OnInit {
 
   fetchDonations() {
         this.http.get<any[]>('https://aweb-p9q6.onrender.com/api/donate/GetDonations').subscribe({
+          //this.http.get<any[]>('http://localhost:5038/api/donate/GetDonations').subscribe({
           next: (data) => {
             this.donations = data;
           },
